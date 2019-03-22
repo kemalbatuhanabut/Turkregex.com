@@ -3,15 +3,165 @@
 <head>
 <meta charset="utf-8">
 <title>Türkçe Regex Rehberi</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha256-YLGeXaapI0/5IgZopewRJcFXomhRMlYYjugPLSyNjTY=" crossorigin="anonymous" />
+<style>
+.pagination {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.3em;
+    z-index: 10;
+}
+.pagination a {
+    display: block;
+    height: 20px;
+    margin-bottom: 5px;
+    color: white;
+    position: relative;
+    padding: 4px;
+}
+.pagination a.active:after {
+    box-shadow: inset 0 0 0 5px;
+}
+.pagination a .hover-text {
+    position: absolute;
+    right: 10px;
+    top: -8px;
+    opacity: 0;
+    -webkit-transition: opacity 0.5s ease;
+    transition: opacity 0.5s ease;
+    padding-right: 10px;
+}
+.pagination a:hover .hover-text {
+    opacity: 1;
+}
+.pagination a:after {
+    -webkit-transition: box-shadow 0.5s ease;
+    transition: box-shadow 0.5s ease;
+    width: 10px;
+    height: 10px;
+    display: block;
+    border: 1px solid;
+    border-radius: 50%;
+    content: '';
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 4px;
+    bottom: 0;
+}
+</style>
 </head>
-
 <body>
-	
-	
-	
-	
-	
-	
-	
+<div class="section  hv-100 bg-warning container-fluid" data-section-name="Home">
+  <div class="row h-100  align-items-center">
+    <div class="col-md-5 offset-md-1 h4">
+<h1>Regex Nedir?</h1>
+		<p>Regex metin aramak için kullanılan bir ifade şeklidir. Ne yazık ki programlama dillerine göre farklılık gösteren durumları vardır. Yazımı iki slash karakteri arasına yapılır ( /./ her karakterle eşleşecektir.) . 
+		</p>
+		  </div>
+<!--
+		<div class="col-md-5 offset-md-1">
+			<ul class="list-group bg-transparent list-group-flush">
+			<li class="list-group-item bg-transparent"> HAHA </li>
+			<li class="list-group-item bg-transparent"> HAHA </li>
+			<li class="list-group-item bg-transparent"> HAHA </li>
+			<li class="list-group-item bg-transparent"> HAHA </li>
+			</ul>
+-->
+			
+		</div>
+  
+  </div>
+</div>
+<div class="section hv-100 bg-primary container-fluid" data-section-name="1">
+  <div class="row h-100 justify-content-center align-items-center">
+    <div class="col">    
+<!--
+		<ul class="list-group bg-transparent list-group-flush">
+        <li class="list-group-item bg-transparent">" . " Her karakter seçilebilir demek.</li>
+        <li class="list-group-item bg-transparent">" $ " Paragrafın sonu demek.</li>
+        <li class="list-group-item bg-transparent">" ^ " Paragrafın başı demek. UYARI : " [^burası] " köşeli parantez içindeyse kendinden sonraki gurubun (burası yazan yer) bulunmamasını söyler.</li>
+        <li class="list-group-item bg-transparent">" * " Önünde bulunduğu karakterin olması yada olmaması farketmez eşlenir. “.*” ifadesi bütün karakterlere eşlenirken, “a*t” ifadesi “t, tt, at” ile eşlenir.</li>
+        <li class="list-group-item bg-transparent"> </li>
+        <li class="list-group-item bg-transparent"> </li>
+      </ul>
+-->
+	  </div>
+  </div>
+</div>
+<div class="section hv-100 bg-secondary container-fluid" data-section-name="2">
+  <div class="row h-100 justify-content-center align-items-center">
+    <div class="col"> </div>
+  </div>
+</div>
+<div class="section hv-100 bg-dark container-fluid" data-section-name="3">
+  <div class="row h-100 justify-content-center align-items-center">
+    <div class="col"> </div>
+  </div>
+</div>
+<div class="section hv-100 bg-warning container-fluid" data-section-name="4">
+  <div class="row h-100 justify-content-center align-items-center">
+    <div class="col"> </div>
+  </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js" integrity="sha256-fzFFyH01cBVPYzl16KT40wqjhgPtq6FFUB6ckN2+GGw=" crossorigin="anonymous"></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/scrollify/1.0.19/jquery.scrollify.min.js"></script> 
+<script>
+	  $.scrollify({
+    section : "section",
+    sectionName : "section-name",
+    interstitialSection : "",
+    easing: "easeOutExpo",
+    scrollSpeed: 1100,
+    offset : 0,
+    scrollbars: false,
+    standardScrollElements: "",
+    setHeights: true,
+    overflowScroll: true,
+    updateHash: true,
+    touchScroll:true,
+    before:function(i,panels) {
+      var ref = panels[i].attr("data-section-name");
+      $(".pagination .active").removeClass("active");
+      $(".pagination").find("a[href=\"#" + ref + "\"]").addClass("active");		
+	},
+    after:function() {},
+    afterResize:function() {},
+    afterRender:function() {	  var pagination = "<ul class= \"pagination list-group\">";
+      var activeClass = "";
+      $(".section").each(function(i) {
+        activeClass = "";
+        if(i===0) {
+          activeClass = "active";
+        }
+        pagination += "<li><a class=\"" + activeClass + "\" href=\"#" + $(this).attr("data-section-name") + "\"><span class=\"hover-text\">" + $(this).attr("data-section-name").charAt(0).toUpperCase() + $(this).attr("data-section-name").slice(1) + "</span></a></li>";
+      });
+
+      pagination += "</ul>";
+	  console.log(pagination);
+      $(".section").append(pagination);
+      /*
+
+      Tip: The two click events below are the same:
+
+      $(".pagination a").on("click",function() {
+        $.scrollify.move($(this).attr("href"));
+      });
+
+      */
+      $(".pagination a").on("click",$.scrollify.move);
+    
+		
+	}
+  });
+        $(function() {
+          $.scrollify({
+            section : ".section",
+          });
+        });
+      </script>
 </body>
 </html>

@@ -5,7 +5,6 @@
 <title>Türkçe Regex Rehberi</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha256-YLGeXaapI0/5IgZopewRJcFXomhRMlYYjugPLSyNjTY=" crossorigin="anonymous" />
 <style>
-
 .pagination {
     position: fixed;
     right: 20px;
@@ -13,6 +12,7 @@
     transform: translateY(-50%);
     font-size: 1.3em;
     z-index: 10;
+	
 }
 .pagination a {
     display: block;
@@ -52,6 +52,11 @@
     right: 4px;
     bottom: 0;
 }
+
+	
+	
+	
+	
 </style>
 </head>
 <body >
@@ -61,56 +66,108 @@
       <h1 class="display-2">RegEx Nedir?</h1>
       <p>RegEx metin aramak için kullanılan bir ifade şeklidir. Ne yazık ki programlama dillerine göre farklılık gösteren durumları vardır. Yazımı iki slash karakteri arasına yapılır ( /./ her karakterle eşleşecektir.) . </p>
     </div>
-<!--	  <div class="col-12 d-block h-50 d-md-none"></div>-->
+    <!--	  <div class="col-12 d-block h-50 d-md-none"></div>-->
     <div class="col-12 col-md-4 offset-md-1">
-		<h2 >RegEx Meta Karakterler</h2>
-		<p class="p-2 border border-primary rounded bg-light" >Nanımı değer anahtar kelimeler. Python daki str() fonksiyonu gibi önceden tanımlanmış karakterlerdir. Karakterin kendini ifade etmek için escape (\) ileberaber kullanmak gerekir. Örneğin /./ her karakterle eşleşir ama /\./ sadece "." ile eşleşir. </p>
+      <h2 >RegEx Meta Karakterler</h2>
+      <p class="p-2 border border-primary rounded bg-light" >Nanımı değer anahtar kelimeler. Python daki str() fonksiyonu gibi önceden tanımlanmış karakterlerdir. Karakterin kendini ifade etmek için escape (\) ileberaber kullanmak gerekir. Örneğin /./ her karakterle eşleşir ama /\./ sadece "." ile eşleşir. </p>
       <ul class="list-group bg-transparent list-group-flush blockquote">
         <li class="list-group-item bg-transparent">. 	Her karakter seçilebilir demek.</li>
         <li class="list-group-item bg-transparent">$ 	Metinin sonu demek.</li>
         <li class="list-group-item bg-transparent">^	Metinin başı demek. UYARI : " [^burası] " köşeli parantez içindeyse kendinden sonraki gurubun (burası yazan yer) bulunmamasını söyler.</li>
         <li class="list-group-item bg-transparent">*	Önünde bulunduğu karakterin olması yada olmaması farketmez eşlenir. “.*” ifadesi bütün karakterlere eşlenirken, “a*t” ifadesi “t, tt, at” ile eşlenir.</li>
         <li class="list-group-item bg-transparent">[]	Karakter seti demek.</li>
-        <li class="list-group-item bg-transparent display-4">Boşluğa dikkat</li>
+        <li class="list-group-item bg-transparent display-4" id="bosluga-dikkat">Boşluğa dikkat</li>
         <li class="list-group-item bg-transparent">\n 	Satır ile eşleşir. </li>
         <li class="list-group-item bg-transparent">\t 	Tab ile eşleşir.</li>
-        <li class="list-group-item bg-transparent">"\ " Bir boşlukla eşleşir.  </li>
+        <li class="list-group-item bg-transparent">"\ " Bir boşlukla eşleşir. </li>
         <li class="list-group-item bg-transparent"> </li>
       </ul>
     </div>
   </div>
 </div>
 <div class="section mhv-100 bg-primary container-fluid" data-section-name="1" id="10">
-  <div class="row h-100 justify-content-center align-items-center">
-    <div class="col">
+  <div class="row h-100 justify-content-center align-items-center text-white">
+    <div class="col col-md-5">
+		<h3 class="text-center">Örnekler</h3>
       <ul class="list-group bg-transparent list-group-flush">
-        <li class="list-group-item bg-transparent"></li>
-        <li class="list-group-item bg-transparent"></li>
-        <li class="list-group-item bg-transparent"></li>
+        <li class="list-group-item bg-transparent">/^x/ &emsp; x ile <b>başlayan</b> bir string ile eşleşir. </li>
+        <li class="list-group-item bg-transparent">/x$/ &emsp; x ile <b>biten</b> bir string ile eşleşir.</li>
+        <li class="list-group-item bg-transparent">
+          <p> /^x$/ &emsp; x ile eşleşir. <br>
+            Örneğin: <br>
+            Hadi <b>x</b> e bas. <br>
+            <s>Xmen</s> yakında vizyona giricek. <br>
+            <mark>Sadece ilk cümledeki x ile eşleşir.</mark>
+          </p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="section mhv-100 bg-secondary container-fluid" data-section-name="2" id="20">
+  <div class="row h-100 justify-content-center align-items-center text-white">
+    <div class="col col-md-5">
+		<h3 class="text-center ">Örnek</h3>
+      <ul class="list-group bg-transparent list-group-flush">
+        <li class="list-group-item bg-transparent"> /(^kedi)|köpek|(at$)/ &emsp; İfadesi taradğımız string ya "kedi" ile başlasın, ya "köpek" içersin ya da "at" ile bitsin demektir. </li>
         <li class="list-group-item bg-transparent"></li>
       </ul>
     </div>
   </div>
 </div>
-<div class="section hv-100 bg-secondary container-fluid" data-section-name="2" id="20">
-  <div class="row h-100 justify-content-center align-items-center">
-    <div class="col"> </div>
-  </div>
-</div>
-<div class="section hv-100 bg-dark container-fluid" data-section-name="3" id="30">
-  <div class="row h-100 justify-content-center align-items-center">
-    <div class="col"> </div>
+<div class="section mhv-100 bg-dark container-fluid" data-section-name="3" id="30">
+  <div class="row h-100 py-4 text-white justify-content-center align-items-center">
+    <div class="col col-md-5 offset-md-1"> 
+	  <h1 class="display-1 text-center text-white"> Modifiye RegEx </h1> <br><br>
+		<p> Regex modifiyesi sanayide yaptırılmıyor. Not defteri yada aşağıdaki kutucuk bu iş için uygundur. Genel de ifadenin sonuna eklenerek yapılırlar. /re/i gibi </p><br><br>
+		  <div class="form-group">
+    <label for="textarea">Bu kutu:</label>
+    <textarea class="form-control" id="textarea" rows="3">/re/i "re" yi arar ama büyük küçük fark etmez. </textarea>
+  </div><br><br>
+		</div>
+	  <div class="col col-md-5 offset-md-1">
+		  <h2 class="text-white-50"> Ayrılmış <small>Reserve</small> Anahtarlar </h2>
+		<ul class="list-group bg-transparent list-group-flush">
+		<li class="list-group-item bg-transparent">g &emsp; Global olarak kontrol et demek. Yani ilk matchte return olmasını önlüyor. </li>
+			<li class="list-group-item bg-transparent">m &emsp; Bir çok satırın başını ve sonunu eşler. Mesela stringiniz bir paragraf ise her satırı ayrı inceler. </li>
+			<li class="list-group-item bg-transparent">s &emsp; Tek satır modudur. Tüm karakterleri eşler <a class="text-warning" href="#bosluga-dikkat">\n</a> dahil. </li>
+			<li class="list-group-item bg-transparent">i &emsp; Büyük küçük duyarsızlaştırır. Regex özünde büyük küçük duyarlıdır.</li>
+			<li class="list-group-item bg-transparent">x &emsp; <a class="text-warning" href="#bosluga-dikkat">Whitespace</a>lere karşı duyarsızlaştırır. Serbest boşluk modunu aktif hale getirir. </li>
+			<li class="list-group-item bg-transparent">u &emsp; Tam bir unicode ile eşleşir.</li>
+		</ul>
+	  </div>
   </div>
 </div>
 <div class="section hv-100 bg-warning container-fluid" data-section-name="4" id="40">
   <div class="row h-100 justify-content-center align-items-center">
-    <div class="col"> </div>
-  </div>
+	  <div class="col-12 col-md-5">
+		  <h1 class="display-1">Tıklarsanız kopyalar bölümü</h1><br><br><br>
+    <h4>RFC 822 Email kontrol etmek için regex kodu:</h4>
+		  
+		  <p class="border rounded border-primary p-2 bg-light clipppers" data-clipboard-target="#rfc822" id="rfc822">
+			 /^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6})*$/
+		  </p>
+
+<h4>Türk usulü Telefon Noları Yakalar: </h4>
+		  <p class="border rounded border-primary p-2 bg-light  clipppers" id="tutny" data-clipboard-target="#tutny">(([\+]90?)|([0]?))([ ]?)((\([0-9]{3}\))|([0-9]{3}))([ ]?)([0-9]{3})(\s*[\-]?)([0-9]{2})(\s*[\-]?)([0-9]{2})</p>
+<h4>IPV4</h4>
+		  <p class="border rounded border-primary p-2 bg-light  clipppers" id="ipv4" data-clipboard-target="#ipv4">/^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$/ 
+/* Match IPv6 address */</p>
+<!--
+<h4></h4>
+		  <p class="border rounded border-primary p-2 bg-light  clipppers" id="tutny" data-clipboard-target="#tutny"></p>
+<h4></h4>
+		  <p class="border rounded border-primary p-2 bg-light  clipppers" id="tutny" data-clipboard-target="#tutny"></p>
+-->
+
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script> 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js" integrity="sha256-fzFFyH01cBVPYzl16KT40wqjhgPtq6FFUB6ckN2+GGw=" crossorigin="anonymous"></script> 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollify/1.0.19/jquery.scrollify.min.js"></script> 
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.js" integrity="sha256-zcyVODxr75HbGSIdOeK8jLNS3rYq2t5M5qRAO7Kzaec=" crossorigin="anonymous"></script>
+	
 <script>
+	
 	  $.scrollify({
 //    section : "section",
     sectionName : "section-name",
@@ -133,7 +190,7 @@
     after:function() {},
     afterResize:function() {},
     afterRender:function() {
-	  var pagination = "<ul id=\"pagination\" class= \"pagination list-group\" >";
+	  var pagination = "<ul id=\"pagination\" class= \"pagination d-none d-sm-block list-group\" >";
       var activeClass = "";
       $(".section").each(function(i) {
         activeClass = "";
@@ -166,5 +223,9 @@
           });
         });
       </script>
+	
+	<script>
+		new ClipboardJS('.clipppers');
+	</script>
 </body>
 </html>
